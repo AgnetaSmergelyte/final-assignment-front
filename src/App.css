@@ -127,6 +127,7 @@ input {
   cursor: pointer;
   border: #F7E987 solid 1px;
   font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .menu-item:hover, button:hover {
   background-color: #d3c55f;
@@ -154,6 +155,11 @@ input {
 
 .profile-pic {
   max-width: 50%;
+  min-height: 120px;
+}
+.profile-pic > img {
+  max-width: 300px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=App.css.map */

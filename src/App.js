@@ -25,6 +25,7 @@ function App() {
                 sessionStorage.setItem("token", autologin);
                 token = autologin;
             } else {
+                nav("/");
                 return;
             }
         }

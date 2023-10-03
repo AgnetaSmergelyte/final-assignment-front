@@ -23,7 +23,7 @@ const Login = () => {
             userData.password.length < 4 ||
             userData.password.length > 20 ||
             !userData.password.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/)) {
-            setErrorMsg('Wrong username or password');
+            setErrorMsg('Incorrect username or password');
             return;
         }
         const options = {
