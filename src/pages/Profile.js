@@ -44,6 +44,8 @@ const Profile = () => {
                 const data = await res.json();
                 if (!data.error) {
                     dispatch(setImage(data.data));
+                    imageRef.current.value = '';
+                    setImageChange(false);
                 } else {
                     console.log('fail')
                 }
@@ -113,6 +115,9 @@ const Profile = () => {
                 setErrorMsg(data.message);
             } else {
                 setErrorMsg(data.message);
+                passwordOldRef.current.value = '';
+                password1Ref.current.value = '';
+                password2Ref.current.value ='';
             }
         } catch (err) {
             setErrorMsg('Server Error');

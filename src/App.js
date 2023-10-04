@@ -10,6 +10,11 @@ import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
+import {io} from 'socket.io-client';
+
+export const socket = io("http://localhost:3001", {
+    autoConnect: true
+});
 
 function App() {
 
@@ -41,7 +46,8 @@ function App() {
             .then(data => {
                 if (!data.error) {
                     dispatch(setUsername(data.data.username));
-                    dispatch(setImage(data.data.image))
+                    dispatch(setImage(data.data.image));
+                    socket.emit("logged",{username: data.data.username});
                     nav("/profile")
                 }
             })

@@ -36,6 +36,10 @@ img {
   justify-content: center;
 }
 
+.j-end {
+  justify-content: flex-end;
+}
+
 .a-center {
   align-items: center;
 }
@@ -109,9 +113,8 @@ input, textarea {
 }
 
 .section {
-  background-color: $color-light-hover;
+  background-color: $color-light;
   border-radius: 5px;
-  min-width: 250px;
   padding: 10px;
   color: $color-darker;
 }
@@ -222,6 +225,7 @@ input, textarea {
 
   & > div {
     width: 350px;
+    max-width: 100%;
     padding: 10px;
     background-color: $color-medium;
     border-radius: 5px;
@@ -230,6 +234,10 @@ input, textarea {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+  }
+
+  & input {
+    width: 100%;
   }
 }
 

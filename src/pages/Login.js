@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {setUsername, setImage} from "../features/user";
+import {socket} from "../App";
 
 const Login = () => {
     const nav = useNavigate();
@@ -43,6 +44,7 @@ const Login = () => {
                 dispatch(setImage(data.data.user.image));
                 if (autologin) localStorage.setItem("autologin", data.data.token);
                 sessionStorage.setItem("token", data.data.token);
+                socket.emit("logged",{username: data.data.user.username});
                 nav("/profile")
             }
         } catch (err) {
