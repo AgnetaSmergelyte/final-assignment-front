@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {setImage} from "../features/user";
 
 const Profile = () => {
-
     const dispatch = useDispatch();
     const username = useSelector(state => state.user.username);
     const userImage = useSelector(state => state.user.image);

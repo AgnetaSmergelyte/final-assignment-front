@@ -60,7 +60,6 @@ function App() {
                 <Route path="/posts" element={<Posts/>}/>
                 <Route path="/users" element={<Users/>}/>
             </Routes>
-
         </div>
     );
 }

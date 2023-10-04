@@ -2,7 +2,6 @@ import React, {useRef, useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 
 const Register = () => {
-
     const nav = useNavigate();
     const usernameRef = useRef();
     const password1Ref = useRef();

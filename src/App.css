@@ -68,7 +68,11 @@ img {
   color: green;
 }
 
-input {
+.w-100 {
+  width: 100%;
+}
+
+input, textarea {
   padding: 10px;
   border: #CD6688 solid 1px;
   border-radius: 5px;
@@ -102,6 +106,7 @@ input {
 
 .form {
   width: 500px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -148,6 +153,10 @@ input {
   background-color: #461959;
 }
 
+.btn-small {
+  padding: 5px 15px;
+}
+
 .link {
   color: #47d4d9;
   margin: 0 5px;
@@ -160,6 +169,67 @@ input {
 .profile-pic > img {
   max-width: 300px;
   border-radius: 5px;
+}
+
+.user-card {
+  background-color: #F7E987;
+  border-radius: 5px;
+  color: #461959;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar > img {
+  width: 100%;
+}
+
+.cards {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal > div {
+  width: 350px;
+  padding: 10px;
+  background-color: #CD6688;
+  border-radius: 5px;
+  color: #F7E987;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

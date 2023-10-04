@@ -80,7 +80,11 @@ img {
   color: green;
 }
 
-input {
+.w-100 {
+  width: 100%;
+}
+
+input, textarea {
   padding: 10px;
   border: $color-medium solid 1px;
   border-radius: 5px;
@@ -114,6 +118,7 @@ input {
 
 .form {
   width: 500px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -155,12 +160,16 @@ input {
    background-color: $color-dark;
    border: $color-dark solid 1px;
    color: $color-light-hover;
-  font-weight: normal;
+   font-weight: normal;
 
    &:hover {
      background-color: $color-darker;
    }
  }
+
+.btn-small {
+  padding: 5px 15px;
+}
 
 .link {
   color: #47d4d9;
@@ -174,5 +183,76 @@ input {
   & > img {
     max-width: 300px;
     border-radius: 5px;
+  }
+}
+
+.user-card {
+  background-color: $color-light;
+  border-radius: 5px;
+  color: $color-darker;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.cards {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    width: 350px;
+    padding: 10px;
+    background-color: $color-medium;
+    border-radius: 5px;
+    color: $color-light;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  //.cards {
+  //  grid-template-columns: repeat(3, 1fr);
+  //}
+}
+
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
