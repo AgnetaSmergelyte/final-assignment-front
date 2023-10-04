@@ -14,15 +14,17 @@ const Toolbar = () => {
         localStorage.removeItem("autologin");
         sessionStorage.removeItem("token");
         dispatch(setUsername(''));
-        nav("/");
+        nav("/login");
     }
 
     return (
-        <div className="toolbar a-center g10 space-even f-wrap">
-            <NavLink className="menu-item" to="/profile">Profile</NavLink>
-            <NavLink className="menu-item" to="/messages">Messages</NavLink>
-            <NavLink className="menu-item" to="/posts">Posts</NavLink>
-            <NavLink className="menu-item" to="/users">Users</NavLink>
+        <div className="toolbar a-center g10 space-btw f-wrap">
+            <div className="d-flex g10 f-wrap">
+                <NavLink className="menu-item" to="/">Profile</NavLink>
+                <NavLink className="menu-item" to="/messages">Messages</NavLink>
+                <NavLink className="menu-item" to="/posts">Posts</NavLink>
+                <NavLink className="menu-item" to="/users">Users</NavLink>
+            </div>
             <button onClick={logout}>Log Out</button>
         </div>
 

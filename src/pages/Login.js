@@ -45,7 +45,7 @@ const Login = () => {
                 if (autologin) localStorage.setItem("autologin", data.data.token);
                 sessionStorage.setItem("token", data.data.token);
                 socket.emit("logged",{username: data.data.user.username});
-                nav("/profile")
+                nav("/")
             }
         } catch (err) {
             setErrorMsg('Server Error');

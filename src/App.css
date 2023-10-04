@@ -85,7 +85,6 @@ input, textarea {
 .App {
   background-color: #461959;
   min-height: 100vh;
-  width: 100vw;
   color: #F7E987;
 }
 
@@ -190,8 +189,7 @@ input, textarea {
   width: 100%;
 }
 
-.cards {
-  padding: 10px;
+.cards, .posts {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -223,19 +221,43 @@ input, textarea {
   width: 100%;
 }
 
+.post-card {
+  overflow: auto;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.post-card:hover {
+  background-color: #d3c55f;
+}
+.post-card img {
+  width: 100%;
+}
+
 @media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .posts {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
+  .posts {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: repeat(4, 1fr);
+  .posts {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 

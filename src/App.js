@@ -3,9 +3,9 @@ import Toolbar from "./components/Toolbar";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {setImage, setUsername} from "./features/user";
+import {addNewPost, addNewUser, setAllPosts, setAllUsers, setImage, setUsername} from "./features/user";
 import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import Posts from "./pages/Posts";
@@ -23,6 +23,26 @@ function App() {
     const username = useSelector(state => state.user.username);
 
     useEffect(() => {
+        socket.on('post', post => {
+            console.log(post);
+            dispatch(addNewPost(post));
+        });
+        socket.on('newUserConnected', newUser => {
+            console.log(newUser)
+            dispatch(addNewUser(newUser));
+        });
+        //fetch posts and other users
+        fetch("http://localhost:8080/getAllPostsAndUsers")
+            .then(res => res.json())
+            .then(data => {
+                if(!data.error) {
+                    dispatch(setAllUsers(data.data.allUsers));
+                    dispatch(setAllPosts(data.data.posts));
+                }
+            })
+            .catch(err => {})
+
+        //if autologin or refreshed app when logged in
         let token = sessionStorage.getItem("token");
         if (!token) {
             const autologin = localStorage.getItem("autologin");
@@ -30,7 +50,7 @@ function App() {
                 sessionStorage.setItem("token", autologin);
                 token = autologin;
             } else {
-                nav("/");
+                nav("/login");
                 return;
             }
         }
@@ -48,20 +68,18 @@ function App() {
                     dispatch(setUsername(data.data.username));
                     dispatch(setImage(data.data.image));
                     socket.emit("logged",{username: data.data.username});
-                    nav("/profile")
                 }
             })
-            .catch(error => {
-            })
+            .catch(err => {})
     }, []);
 
     return (
         <div className="App">
             {username && <Toolbar/>}
             <Routes>
-                <Route path="/" element={<Login/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
-                <Route path="/profile" element={<Profile/>}/>
+                <Route path="/" element={<Profile/>}/>
                 <Route path="/messages" element={<Messages/>}/>
                 <Route path="/posts" element={<Posts/>}/>
                 <Route path="/users" element={<Users/>}/>

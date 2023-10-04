@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
+import {socket} from "../App";
 
 const Register = () => {
     const nav = useNavigate();
@@ -62,7 +63,8 @@ const Register = () => {
             if (data.error) {
                 setErrorMsg(data.message);
             } else {
-                nav("/");
+                socket.emit('newUser', userData.username);
+                nav("/login");
             }
         } catch (err) {
             setErrorMsg('Server Error');
@@ -79,7 +81,7 @@ const Register = () => {
                 <button onClick={signup}>Sign Up</button>
             </div>
             <div className="text-center">Go to
-                <NavLink className="link" to="/">Log In</NavLink>
+                <NavLink className="link" to="/login">Log In</NavLink>
                 instead
             </div>
         </div>

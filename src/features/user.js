@@ -6,6 +6,7 @@ export const userSlice = createSlice({
         username: '',
         image: '',
         allUsers: [],
+        allPosts: [],
     },
     reducers: {
         setUsername: (state, action) => {
@@ -20,10 +21,16 @@ export const userSlice = createSlice({
         addNewUser: (state, action) => {
             state.allUsers.push(action.payload)
         },
+        setAllPosts: (state, action) => {
+            state.allPosts = action.payload
+        },
+        addNewPost: (state, action) => {
+            state.allPosts.push(action.payload)
+        },
 
     }
 })
 
-export const {setUsername, setImage, setAllUsers, addNewUser} = userSlice.actions;
+export const {setUsername, setImage, setAllUsers, addNewUser, setAllPosts, addNewPost} = userSlice.actions;
 
 export default userSlice.reducer;
