@@ -1,5 +1,5 @@
 $color-light: #F7E987;
-$color-light-hover: #d3c55f;
+$color-light-hover: #e8d545;
 $color-medium: #CD6688;
 $color-dark: #7A316F;
 $color-darker: #461959;
@@ -92,6 +92,11 @@ input, textarea {
   padding: 10px;
   border: $color-medium solid 1px;
   border-radius: 5px;
+
+}
+
+input:focus {
+  outline: none;
 }
 
 .App {
@@ -197,6 +202,7 @@ input, textarea {
 
 .post-pic > img {
     width: 100%;
+  min-width: 200px;
     border-radius: 5px;
 }
 
@@ -265,6 +271,12 @@ input, textarea {
   & img {
     width: 100%;
   }
+}
+
+.comment {
+  background-color: $color-light-hover;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 @media (min-width: 600px) {

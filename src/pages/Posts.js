@@ -15,7 +15,7 @@ const Posts = () => {
     const posts = useSelector(state => state.user.allPosts);
     const [newPostModal, setNewPostModal] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
-    const [sortBy, setSortBy] = useState('time');
+    const [sortBy, setSortBy] = useState('');
     const [descending, setDescending] = useState(false);
     function submitNewPost() {
         const postInfo = {
