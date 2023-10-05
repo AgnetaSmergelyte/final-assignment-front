@@ -171,15 +171,15 @@ input:focus {
 }
 
 .btn-dark {
-   background-color: $color-dark;
-   border: $color-dark solid 1px;
-   color: $color-light-hover;
-   font-weight: normal;
+  background-color: $color-dark;
+  border: $color-dark solid 1px;
+  color: $color-light-hover;
+  font-weight: normal;
 
-   &:hover {
-     background-color: $color-darker;
-   }
- }
+  &:hover {
+    background-color: $color-darker;
+  }
+}
 
 .btn-small {
   padding: 5px 15px;
@@ -201,9 +201,9 @@ input:focus {
 }
 
 .post-pic > img {
-    width: 100%;
+  width: 100%;
   min-width: 200px;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .user-card {
@@ -270,6 +270,7 @@ input:focus {
 
   & img {
     width: 100%;
+    max-height: 500px;
   }
 }
 

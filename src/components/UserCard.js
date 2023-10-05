@@ -1,12 +1,16 @@
 import React, {useRef, useState} from 'react';
+import {socket} from "../App";
+import {useSelector} from "react-redux";
 
 const UserCard = ({user}) => {
     const [messageModal, setMessageModal] = useState(false);
+    const username = useSelector(state => state.user.username);
     const messageRef = useRef();
     function sendMessage() {
         const message = messageRef.current.value;
         if (message === '') return;
-
+        socket.emit('message', {message, recipient: user.username});
+        setMessageModal(false);
     }
     return (
         <div className="user-card d-flex g10 p10">
@@ -15,7 +19,7 @@ const UserCard = ({user}) => {
             </div>
             <div className="d-flex f-col space-even flex-1">
                 <h3>{user.username}</h3>
-                <button className="btn-dark btn-small" onClick={() => setMessageModal(true)}>Write message</button>
+                {username !== user.username && <button className="btn-dark btn-small" onClick={() => setMessageModal(true)}>Write message</button>}
             </div>
             {messageModal &&
                 <div className="modal">
