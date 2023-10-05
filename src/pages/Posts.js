@@ -1,11 +1,10 @@
 import React, {useRef, useState} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faChevronUp, faChevronDown} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronUp, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {socket} from "../App";
 import {useDispatch, useSelector} from "react-redux";
 import PostCard from "../components/PostCard";
 import {setAllPosts} from "../features/user";
-
 const ascIcon = <FontAwesomeIcon icon={faChevronUp}/>;
 const descIcon = <FontAwesomeIcon icon={faChevronDown}/>;
 
@@ -18,7 +17,6 @@ const Posts = () => {
     const [errorMsg, setErrorMsg] = useState('');
     const [sortBy, setSortBy] = useState('time');
     const [descending, setDescending] = useState(false);
-
     function submitNewPost() {
         const postInfo = {
             image: postImageRef.current.value,
@@ -31,7 +29,6 @@ const Posts = () => {
         socket.emit("newPost", postInfo);
         setNewPostModal(false);
     }
-
     function sortPosts(sortValue) {
         let desc = true;
         if (sortValue === sortBy) desc = !descending
@@ -71,7 +68,6 @@ const Posts = () => {
             setSortBy('time');
         }
     }
-
     return (
         <div className="p10">
             <div className="d-flex f-wrap section g10 a-center j-center mb-10">

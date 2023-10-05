@@ -14,7 +14,6 @@ const Profile = () => {
     const passwordOldRef = useRef();
     const password1Ref = useRef();
     const password2Ref = useRef();
-
     function openImageChangeBox() {
         setImageChange(true);
         setUrlErrorMsg('');
@@ -25,7 +24,6 @@ const Profile = () => {
             setUrlErrorMsg('Enter Image Url');
             return;
         }
-
         const token = sessionStorage.getItem("token");
         if (token) {
             const userData = {
@@ -123,7 +121,6 @@ const Profile = () => {
             setErrorMsg('Server Error');
         }
     }
-
     return (
         <div className="p10">
             <div className="d-flex section g10">

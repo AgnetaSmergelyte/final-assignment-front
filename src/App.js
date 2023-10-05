@@ -3,28 +3,28 @@ import Toolbar from "./components/Toolbar";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {addNewPost, addNewUser, setAllPosts, setAllUsers, setImage, setUsername} from "./features/user";
+import {addNewPost, addNewUser, setAllPosts, setAllUsers, setImage, setSinglePost, setUsername} from "./features/user";
 import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import Posts from "./pages/Posts";
 import Users from "./pages/Users";
 import {io} from 'socket.io-client';
+import SinglePost from "./pages/SinglePost";
 
 export const socket = io("http://localhost:3001", {
     autoConnect: true
 });
 
 function App() {
-
     const dispatch = useDispatch();
     const nav = useNavigate();
     const username = useSelector(state => state.user.username);
+    const currentPost = useSelector(state => state.user.singlePost);
 
     useEffect(() => {
         socket.on('post', post => {
-            console.log(post);
             dispatch(addNewPost(post));
         });
         socket.on('newUserConnected', newUser => {
@@ -82,6 +82,7 @@ function App() {
                 <Route path="/" element={<Profile/>}/>
                 <Route path="/messages" element={<Messages/>}/>
                 <Route path="/posts" element={<Posts/>}/>
+                <Route path="/posts/:id" element={<SinglePost/>}/>
                 <Route path="/users" element={<Users/>}/>
             </Routes>
         </div>

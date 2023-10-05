@@ -3,13 +3,11 @@ import React, {useRef, useState} from 'react';
 const UserCard = ({user}) => {
     const [messageModal, setMessageModal] = useState(false);
     const messageRef = useRef();
-
     function sendMessage() {
         const message = messageRef.current.value;
         if (message === '') return;
 
     }
-
     return (
         <div className="user-card d-flex g10 p10">
             <div className="avatar">
@@ -29,7 +27,8 @@ const UserCard = ({user}) => {
                             <button className="btn-small" onClick={sendMessage}>Send</button>
                         </div>
                     </div>
-                </div>}
+                </div>
+            }
         </div>
     );
 };

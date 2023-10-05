@@ -11,7 +11,6 @@ const Login = () => {
     const passwordRef = useRef();
     const autologinRef = useRef();
     const [errorMsg, setErrorMsg] = useState('');
-
     async function loginUser() {
         setErrorMsg('');
         const autologin = autologinRef.current.checked;
@@ -51,7 +50,6 @@ const Login = () => {
             setErrorMsg('Server Error');
         }
     }
-
     return (
         <div className="container">
             <div className="form">

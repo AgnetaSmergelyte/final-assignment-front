@@ -106,6 +106,13 @@ input, textarea {
   color: #461959;
 }
 
+.section-darker {
+  background-color: #CD6688;
+  border-radius: 5px;
+  padding: 10px;
+  color: #461959;
+}
+
 .form {
   width: 500px;
   max-width: 100%;
@@ -173,6 +180,11 @@ input, textarea {
   border-radius: 5px;
 }
 
+.post-pic > img {
+  width: 100%;
+  border-radius: 5px;
+}
+
 .user-card {
   background-color: #F7E987;
   border-radius: 5px;
@@ -206,6 +218,9 @@ input, textarea {
   align-items: center;
 }
 .modal > div {
+  box-shadow: 0px 0px 5px 5px rgba(70, 25, 89, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(70, 25, 89, 0.75);
+  -moz-box-shadow: 0px 0px 5px 5px rgba(70, 25, 89, 0.75);
   width: 350px;
   max-width: 100%;
   padding: 10px;

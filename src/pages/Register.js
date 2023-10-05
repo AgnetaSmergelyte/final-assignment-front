@@ -8,7 +8,6 @@ const Register = () => {
     const password1Ref = useRef();
     const password2Ref = useRef();
     const [errorMsg, setErrorMsg] = useState('');
-
     async function signup() {
         const username = usernameRef.current.value;
         const password1 = password1Ref.current.value;
@@ -70,7 +69,6 @@ const Register = () => {
             setErrorMsg('Server Error');
         }
     }
-
     return (
         <div className="container">
             <div className="form">
