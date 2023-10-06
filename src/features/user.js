@@ -8,6 +8,8 @@ export const userSlice = createSlice({
         allUsers: [],
         allPosts: [],
         singlePost: {post: null, author: null},
+        conversations: [],
+        currentChat: null,
     },
     reducers: {
         setUsername: (state, action) => {
@@ -42,10 +44,38 @@ export const userSlice = createSlice({
         },
         setSinglePost: (state, action) => {
             state.singlePost = action.payload;
+        },
+        setConversations: (state, action) => {
+            state.conversations = action.payload;
+        },
+        addNewMessage: (state, action) => {
+            for (let i = 0; i < state.conversations.length - 1; i++) {
+                if (state.conversations[i]._id === action.payload.id) {
+                    state.conversations[i].messages.push(action.payload.message);
+                    if (state.currentChat._id === action.payload.id) {
+                        state.currentChat.messages.push(action.payload.message);
+                    }
+                    return;
+                }
+            }
+        },
+        setCurrentChat: (state, action) => {
+            state.currentChat = action.payload;
         }
     }
 })
 
-export const {setUsername, setImage, setAllUsers, addNewUser, setAllPosts, addNewPost, setSinglePost} = userSlice.actions;
+export const {
+    setUsername,
+    setImage,
+    setAllUsers,
+    addNewUser,
+    setAllPosts,
+    addNewPost,
+    setSinglePost,
+    setConversations,
+    addNewMessage,
+    setCurrentChat
+} = userSlice.actions;
 
 export default userSlice.reducer;

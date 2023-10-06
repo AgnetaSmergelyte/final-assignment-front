@@ -5,7 +5,17 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {addNewPost, addNewUser, setAllPosts, setAllUsers, setImage, setSinglePost, setUsername} from "./features/user";
+import {
+    addNewMessage,
+    addNewPost,
+    addNewUser,
+    setAllPosts,
+    setAllUsers,
+    setConversations,
+    setImage,
+    setSinglePost,
+    setUsername
+} from "./features/user";
 import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import Posts from "./pages/Posts";
@@ -28,9 +38,15 @@ function App() {
             dispatch(addNewPost(post));
         });
         socket.on('newUserConnected', newUser => {
-            console.log(newUser)
             dispatch(addNewUser(newUser));
         });
+        socket.on('getConversations', conversations => {
+            dispatch(setConversations(conversations));
+        });
+        socket.on('newMessage', val => {
+            dispatch(addNewMessage(val));
+            console.log(val)
+        })
         //fetch posts and other users
         fetch("http://localhost:8080/getAllPostsAndUsers")
             .then(res => res.json())

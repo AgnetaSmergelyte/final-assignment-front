@@ -122,9 +122,9 @@ const Profile = () => {
         }
     }
     return (
-        <div className="p10">
+        <div className="p10 d-flex">
             <div className="d-flex section g10">
-                <div className="d-flex f-col g10 profile-pic space-btw">
+                <div className="d-flex f-col g10 profile-pic space-btw flex-1">
                     <img src={userImage} alt=""/>
                     {imageChange ?
                         <div className="d-flex f-col g10">
@@ -137,7 +137,7 @@ const Profile = () => {
                         </div> :
                         <button className="btn-dark" onClick={openImageChangeBox}>Change Picture</button>}
                 </div>
-                <div className="d-flex f-col space-btw">
+                <div className="d-flex f-col space-btw flex-1">
                     <h1>{username}</h1>
                     {passwordChange ?
                         <div className="d-flex f-col g10">
@@ -145,7 +145,7 @@ const Profile = () => {
                             <input type="password" ref={password1Ref} placeholder="New password"/>
                             <input type="password" ref={password2Ref} placeholder="Repeat new password"/>
                             <b className="text-red text-center">{errorMsg}</b>
-                            <div className="d-flex g10">
+                            <div className="d-flex g10 j-center">
                                 <button className="btn-dark" onClick={() => setPasswordChange(false)}>Cancel</button>
                                 <button className="btn-dark" onClick={changeUserPassword}>Confirm</button>
                             </div>

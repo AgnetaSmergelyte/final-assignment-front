@@ -1,17 +1,9 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
+import formatDate from "../features/time";
 
 const PostCard = ({post}) => {
     const nav = useNavigate();
-    const formatDate = (timeStamp) => {
-        const dateFormat = new Date(timeStamp);
-        return dateFormat.getDate() +
-            "/" + (dateFormat.getMonth() + 1) +
-            "/" + dateFormat.getFullYear() +
-            " " + dateFormat.getHours() +
-            ":" + dateFormat.getMinutes() +
-            ":" + dateFormat.getSeconds();
-    }
     return (
         <div className="section post-card d-flex f-col space-btw" onClick={() => nav(`/posts/${post._id}`)}>
             <div>

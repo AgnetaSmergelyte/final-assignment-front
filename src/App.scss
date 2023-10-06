@@ -20,6 +20,10 @@ img {
   max-width: 100%;
 }
 
+.d-none {
+  display: none;
+}
+
 .d-flex {
   display: flex;
 }
@@ -121,6 +125,7 @@ input:focus {
   border-radius: 5px;
   padding: 10px;
   color: $color-darker;
+  max-width: 100%;
 }
 
 .section-darker {
@@ -145,6 +150,7 @@ input:focus {
   padding: 10px;
   gap: 10px;
   color: $color-light;
+  flex-direction: column;
 }
 
 .menu-item, button {
@@ -280,6 +286,75 @@ input:focus {
   padding: 5px 10px;
 }
 
+.chat-card {
+  background-color: $color-medium;
+  border-radius: 5px;
+  color: $color-darker;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.last-msg {
+  height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  width: 200px;
+}
+
+.chat-avatar {
+  width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.message-window {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.menu-closed {
+  display: none;
+}
+
+.menu-opened {
+  display: flex;
+  flex-direction: column;
+}
+
+.contain-in-window {
+  max-height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.chat-box {
+  width: 100%;
+  height: 100%;
+  background-color: $color-light;
+}
+
+.my-msg {
+  justify-content: flex-end;
+  & > div {
+    background-color: #efc45c;
+  }
+}
+
 @media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
@@ -287,11 +362,34 @@ input:focus {
   .posts {
     grid-template-columns: repeat(2, 1fr);
   }
+  .message-window {
+    grid-template-columns: 200px 1fr;
+  }
+  .last-msg {
+    width: 100px;
+  }
+  .btn-toggle {
+    display: none;
+  }
+  .menu-closed {
+    display: flex;
+  }
+  .toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @media (min-width: 768px) {
   .posts {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .message-window {
+    grid-template-columns: 300px 1fr;
+  }
+  .last-msg {
+    width: 200px;
   }
 }
 
