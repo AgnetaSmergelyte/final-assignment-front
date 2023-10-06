@@ -138,6 +138,7 @@ input:focus {
   gap: 10px;
   color: #F7E987;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .menu-item, button {
@@ -275,7 +276,7 @@ input:focus {
   transition: 0.3s;
 }
 .chat-card:hover {
-  transform: scale(1.02);
+  background-color: #c05579;
 }
 
 .last-msg {
@@ -315,16 +316,15 @@ input:focus {
   flex-direction: column;
 }
 
-.contain-in-window {
-  max-height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-}
-
 .chat-box {
   width: 100%;
-  height: 100%;
   background-color: #F7E987;
+}
+
+.conversation {
+  overflow: auto;
+  box-sizing: border-box;
+  height: calc(100vh - 257px);
 }
 
 .my-msg {
@@ -332,6 +332,11 @@ input:focus {
 }
 .my-msg > div {
   background-color: #efc45c;
+}
+
+.message-field {
+  height: 40px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
@@ -357,6 +362,14 @@ input:focus {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
+  }
+  .conversation {
+    height: calc(100vh - 200px);
+  }
+  .chat-left {
+    height: calc(100vh - 90px);
+    overflow: auto;
   }
 }
 @media (min-width: 768px) {

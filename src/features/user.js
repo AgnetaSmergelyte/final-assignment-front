@@ -52,7 +52,7 @@ export const userSlice = createSlice({
             for (let i = 0; i < state.conversations.length - 1; i++) {
                 if (state.conversations[i]._id === action.payload.id) {
                     state.conversations[i].messages.push(action.payload.message);
-                    if (state.currentChat._id === action.payload.id) {
+                    if (state.currentChat && state.currentChat._id === action.payload.id) {
                         state.currentChat.messages.push(action.payload.message);
                     }
                     return;

@@ -31,7 +31,7 @@ const Toolbar = () => {
     }
     return (
         <div className="toolbar g10 f-wrap">
-            <div className="btn-toggle d-flex j-end">
+            <div className="btn-toggle d-flex j-end a-center">
                 <button onClick={toggleMainMenu}>{toggleMenu}</button>
             </div>
             <div className={"d-flex g10 f-wrap " + toggleDisplay}>

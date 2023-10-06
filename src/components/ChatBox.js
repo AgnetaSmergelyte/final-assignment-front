@@ -18,11 +18,11 @@ const ChatBox = () => {
         <div>
             {conversation &&
                 <div className="section chat-box">
-                    <h2 className="text-center mb-10">Chat with {conversation.username}</h2>
-                    <div className="d-flex f-col g10 mb-10">
+                    <h2 className="text-center message-field">Chat with {conversation.username}</h2>
+                    <div className="d-flex f-col g10 mb-10 conversation">
                         {conversation.messages.map((x, i) => <Message key={i} message={x}/>)}
                     </div>
-                    <div className="d-flex">
+                    <div className="d-flex message-field">
                         <input type="text" ref={messageRef} placeholder="Message" className="flex-1"
                                style={{borderRadius: "5px 0 0 5px"}}/>
                         <button className="btn-small btn-dark" style={{borderRadius: "0 5px 5px 0"}}

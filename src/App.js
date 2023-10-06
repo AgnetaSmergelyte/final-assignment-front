@@ -31,7 +31,6 @@ function App() {
     const dispatch = useDispatch();
     const nav = useNavigate();
     const username = useSelector(state => state.user.username);
-    const currentPost = useSelector(state => state.user.singlePost);
 
     useEffect(() => {
         socket.on('post', post => {
@@ -45,7 +44,6 @@ function App() {
         });
         socket.on('newMessage', val => {
             dispatch(addNewMessage(val));
-            console.log(val)
         })
         //fetch posts and other users
         fetch("http://localhost:8080/getAllPostsAndUsers")
