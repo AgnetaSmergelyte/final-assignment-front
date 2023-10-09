@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setConversations, setImage, setUsername} from "../features/user";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
@@ -29,12 +29,16 @@ const Toolbar = () => {
             setToggleMenu(closeMenu);
         }
     }
+    function closeMainMenu() {
+        setToggleDisplay('menu-closed');
+        setToggleMenu(openMenu);
+    }
     return (
         <div className="toolbar g10 f-wrap">
             <div className="btn-toggle d-flex j-end a-center">
                 <button onClick={toggleMainMenu}>{toggleMenu}</button>
             </div>
-            <div className={"d-flex g10 f-wrap " + toggleDisplay}>
+            <div className={"d-flex g10 f-wrap " + toggleDisplay} onClick={closeMainMenu}>
                 <NavLink className="menu-item" to="/">Profile</NavLink>
                 <NavLink className="menu-item" to="/messages">Messages</NavLink>
                 <NavLink className="menu-item" to="/posts">Posts</NavLink>

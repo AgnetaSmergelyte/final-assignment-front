@@ -29,7 +29,7 @@ const Messages = () => {
         <div className="message-window p10 g10">
             <div className="d-flex f-col g10 section chat-left">
                 <button className="btn-toggle btn-small" onClick={toggleUserMenu}>{toggleMenu}</button>
-                <div className={toggleDisplay + " d-flex f-col g10"}>
+                <div className={toggleDisplay + " d-flex f-col g10"}  onClick={toggleUserMenu}>
                     {conversations.map(x => <ChatWith key={x._id} conversation={x}/>)}
                 </div>
             </div>

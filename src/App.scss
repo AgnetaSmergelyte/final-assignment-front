@@ -401,6 +401,9 @@ input:focus {
   .menu-closed {
     display: flex;
   }
+  .menu-opened {
+    flex-direction: row;
+  }
   .toolbar {
     flex-direction: row;
     justify-content: space-between;
