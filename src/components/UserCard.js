@@ -1,14 +1,22 @@
 import React, {useRef, useState} from 'react';
 import {socket} from "../App";
 import {useSelector} from "react-redux";
+import AlertBox from "./AlertBox";
 
 const UserCard = ({user}) => {
     const [messageModal, setMessageModal] = useState(false);
     const username = useSelector(state => state.user.username);
     const messageRef = useRef();
+    const [alert, setAlert] = useState('');
     function sendMessage() {
         const message = messageRef.current.value;
-        if (message === '') return;
+        if (message === '') {
+            setAlert('Message empty');
+            return;
+        } else if (message.length > 1000) {
+            setAlert('Message too long');
+            return;
+        }
         socket.emit('message', {message, recipient: user.username});
         setMessageModal(false);
     }
@@ -33,6 +41,7 @@ const UserCard = ({user}) => {
                     </div>
                 </div>
             }
+            {alert && <AlertBox alert={alert} setAlert={setAlert}/>}
         </div>
     );
 };

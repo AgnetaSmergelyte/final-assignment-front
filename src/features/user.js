@@ -49,7 +49,7 @@ export const userSlice = createSlice({
             state.conversations = action.payload;
         },
         addNewMessage: (state, action) => {
-            for (let i = 0; i < state.conversations.length - 1; i++) {
+            for (let i = 0; i < state.conversations.length; i++) {
                 if (state.conversations[i]._id === action.payload.id) {
                     state.conversations[i].messages.push(action.payload.message);
                     if (state.currentChat && state.currentChat._id === action.payload.id) {
@@ -58,6 +58,9 @@ export const userSlice = createSlice({
                     return;
                 }
             }
+        },
+        addNewConversation: (state, action) => {
+          state.conversations.push(action.payload)
         },
         setCurrentChat: (state, action) => {
             state.currentChat = action.payload;
@@ -75,6 +78,7 @@ export const {
     setSinglePost,
     setConversations,
     addNewMessage,
+    addNewConversation,
     setCurrentChat
 } = userSlice.actions;
 

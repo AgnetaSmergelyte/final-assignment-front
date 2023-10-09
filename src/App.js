@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
+    addNewConversation,
     addNewMessage,
     addNewPost,
     addNewUser,
@@ -13,7 +14,6 @@ import {
     setAllUsers,
     setConversations,
     setImage,
-    setSinglePost,
     setUsername
 } from "./features/user";
 import Profile from "./pages/Profile";
@@ -22,7 +22,6 @@ import Posts from "./pages/Posts";
 import Users from "./pages/Users";
 import {io} from 'socket.io-client';
 import SinglePost from "./pages/SinglePost";
-
 export const socket = io("http://localhost:3001", {
     autoConnect: true
 });
@@ -39,12 +38,16 @@ function App() {
         socket.on('newUserConnected', newUser => {
             dispatch(addNewUser(newUser));
         });
+        socket.on('newMessage', val => {
+            dispatch(addNewMessage(val));
+        });
+        socket.on('newConversation', conversation => {
+            dispatch(addNewConversation(conversation));
+            socket.emit('join', conversation._id);
+        });
         socket.on('getConversations', conversations => {
             dispatch(setConversations(conversations));
         });
-        socket.on('newMessage', val => {
-            dispatch(addNewMessage(val));
-        })
         //fetch posts and other users
         fetch("http://localhost:8080/getAllPostsAndUsers")
             .then(res => res.json())
@@ -55,7 +58,6 @@ function App() {
                 }
             })
             .catch(err => {})
-
         //if autologin or refreshed app when logged in
         let token = sessionStorage.getItem("token");
         if (!token) {

@@ -5,7 +5,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
 import ChatBox from "../components/ChatBox";
 import {setCurrentChat} from "../features/user";
-
 const openMenu = <FontAwesomeIcon icon={faBars}/>;
 const closeMenu = <FontAwesomeIcon icon={faTimes}/>;
 
@@ -14,11 +13,9 @@ const Messages = () => {
     const conversations = useSelector(state => state.user.conversations);
     const [toggleMenu, setToggleMenu] = useState(closeMenu);
     const [toggleDisplay, setToggleDisplay] = useState('');
-
-    useEffect(()=>{
+    useEffect(() => {
         return () => dispatch(setCurrentChat(null))
     }, [])
-
     function toggleUserMenu() {
         if (toggleMenu === closeMenu) {
             setToggleDisplay('menu-closed');
