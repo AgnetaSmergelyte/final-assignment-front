@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {setConversations, setImage, setUsername} from "../features/user";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
+import {socket} from "../App";
 const openMenu = <FontAwesomeIcon icon={faBars}/>;
 const closeMenu = <FontAwesomeIcon icon={faTimes}/>;
 
@@ -13,6 +14,7 @@ const Toolbar = () => {
     const [toggleMenu, setToggleMenu] = useState(openMenu);
     const [toggleDisplay, setToggleDisplay] = useState('menu-closed')
     function logout() {
+        socket.emit('logout');
         localStorage.removeItem("autologin");
         sessionStorage.removeItem("token");
         dispatch(setUsername(''));

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {socket} from "../App";
 import {useSelector} from "react-redux";
 import AlertBox from "./AlertBox";
@@ -8,10 +8,17 @@ const UserCard = ({user}) => {
     const username = useSelector(state => state.user.username);
     const messageRef = useRef();
     const [alert, setAlert] = useState('');
+    const messagesModalRef = useRef();
+    const scrollToTop = () => {
+        messagesModalRef.current?.scrollIntoView();
+    }
+    useEffect(() => {
+        scrollToTop();
+    }, [messageModal]);
     function sendMessage() {
         const message = messageRef.current.value;
         if (message === '') {
-            setAlert('Message empty');
+            setAlert('Message empty!');
             return;
         } else if (message.length > 1000) {
             setAlert('Message too long');
@@ -30,7 +37,7 @@ const UserCard = ({user}) => {
                 {username !== user.username && <button className="btn-dark btn-small" onClick={() => setMessageModal(true)}>Write message</button>}
             </div>
             {messageModal &&
-                <div className="modal">
+                <div className="modal" ref={messagesModalRef}>
                     <div>
                         <b>Message to {user.username}:</b>
                         <textarea className="w-100" ref={messageRef} placeholder="Enter your message here..." rows="5" />

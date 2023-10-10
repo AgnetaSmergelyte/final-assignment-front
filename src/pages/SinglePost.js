@@ -16,7 +16,6 @@ const SinglePost = () => {
     const post = useSelector(state => state.user.singlePost.post);
     const author = useSelector(state => state.user.singlePost.author);
     const commentRef = useRef();
-
     useEffect(() => {
         fetch("http://localhost:8080/posts/" + id)
             .then(res => res.json())
@@ -30,18 +29,15 @@ const SinglePost = () => {
             .catch(err => setErrorMsg('Server Error'));
         return () => dispatch(setSinglePost({post: null, author: null}));
     }, []);
-
     function likePost() {
         socket.emit("like", id);
     }
-
     function sendComment() {
         const comment = commentRef.current.value;
         if (!comment) return;
         socket.emit("comment", {postId: id, comment});
         commentRef.current.value = '';
     }
-
     return (
         <div className="p10">
             <h1>{errorMsg}</h1>
@@ -64,9 +60,10 @@ const SinglePost = () => {
                         </div>
                     </div>
                     <div className="section">
-                        <div className="d-flex f-col g10 mb-10">
+                        {post.comments.length > 0 ?
+                            <div className="d-flex f-col g10 mb-10">
                             {post.comments.map((x, i) => <Comment key={i} comment={x}/>)}
-                        </div>
+                        </div> : <p className="mb-10">Be first to leave a comment:</p>}
                         <div className="d-flex">
                             <input type="text" className="flex-1" ref={commentRef} placeholder="Write a comment..."
                                    style={{borderRadius: "5px 0 0 5px"}}/>

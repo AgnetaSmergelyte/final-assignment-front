@@ -88,7 +88,6 @@ function App() {
             })
             .catch(err => {})
     }, []);
-
     return (
         <div className="App">
             {username && <Toolbar/>}

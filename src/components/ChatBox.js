@@ -1,5 +1,4 @@
 import React, {useRef, useState} from 'react';
-import Message from "./Message";
 import {socket} from "../App";
 import {useSelector} from "react-redux";
 import Conversation from "./Conversation";
@@ -12,7 +11,7 @@ const ChatBox = () => {
     function sendMessage() {
         const message = messageRef.current.value;
         if (message === '') {
-            setAlert('Message empty');
+            setAlert('Message empty!');
             return;
         } else if (message.length > 1000) {
             setAlert('Message too long');

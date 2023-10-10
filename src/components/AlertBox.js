@@ -4,7 +4,7 @@ const AlertBox = ({alert, setAlert}) => {
     return (
         <div className="alert">
             <div className="p10 d-flex f-col a-center g10">
-                <h3 className="mb-10">{alert}</h3>
+                <p className="mb-10">{alert}</p>
                 <button className="btn-send" onClick={() => setAlert(null)}>OK</button>
             </div>
         </div>
