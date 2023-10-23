@@ -6,11 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Seamless navigation and dynamic page rendering made using React-Router.
 
-Redux used to ensure consistent state management and an efficient data flow across components.
-
 Efficient data flow across components and consistent state management thanks to Redux.
 
-Responsive Mobile First Web Design enhanced with SCS.
+Responsive Mobile First Web Design enhanced with SCSS.
 
 ## Back-End:
 
