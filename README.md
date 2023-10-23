@@ -1,16 +1,32 @@
 # Project Overview
 
+##Front-End:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-React-Router used for seamless navigation and dynamic page rendering.
+Seamless navigation and dynamic page rendering made using React-Router.
 
 Redux used to ensure consistent state management and an efficient data flow across components.
 
-Design was enhanced with SCSS to produce responsive and modern user interface components, ensuring a cohesive user experience on all devices.
+Efficient data flow across components and consistent state management thanks to Redux.
+
+Responsive Mobile First Web Design enhanced with SCS.
+
+##Back-End:
+
+Database: Data storage and management is handled using MongoDB, a NoSQL database known for its flexibility and scalability.
+
+Password Security: User passwords are securely hashed using bcrypt, ensuring data protection and security.
+
+Authorization: Implemented JWT (JSON Web Tokens) for secure and efficient user authorization, allowing for protected routes and actions based on user roles or permissions.
+
+Real-time Communication: The platform supports real-time interactions using Socket.io for instant messaging and live post updates.
+
+User Management: ViewExpress is employed for tasks like user registration, login functionalities, managing posts, and overseeing message exchanges.
 
 # Take a look
 
-Mobile version:
+## Mobile version:
 
 ![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/ce970f5b-848f-4de3-8fd1-0599e9e98cca)
 
@@ -22,11 +38,14 @@ Mobile version:
 
 ![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/f26ca0b6-e003-465b-bf67-97af68284853)
 
-Desktop version:
+## Desktop version:
 
 ![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0f2a7529-8882-4a07-820d-eaf6bbb439c4)
 
 ![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0e5874a9-efa5-4081-b08f-8975d669b054)
+
+![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/f35b5aca-547a-48a8-86b0-553949093da8)
+
 
 
 
