@@ -1,6 +1,6 @@
 # Project Overview
 
-##Front-End:
+## Front-End:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -12,7 +12,7 @@ Efficient data flow across components and consistent state management thanks to 
 
 Responsive Mobile First Web Design enhanced with SCS.
 
-##Back-End:
+## Back-End:
 
 Database: Data storage and management is handled using MongoDB, a NoSQL database known for its flexibility and scalability.
 
@@ -26,7 +26,7 @@ User Management: ViewExpress is employed for tasks like user registration, login
 
 # Take a look
 
-## Mobile version:
+##  Mobile version:
 
 ![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/ce970f5b-848f-4de3-8fd1-0599e9e98cca)
 
