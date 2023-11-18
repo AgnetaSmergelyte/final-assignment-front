@@ -28,11 +28,17 @@ The platform supports real-time interactions using Socket.io for instant messagi
 
 ##  Mobile version:
 
-![img1](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/66b71048-e7f0-49d5-aa29-e9acd014f361) ![img2](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/54b02909-6f2f-490c-9da9-8755adde954b)
+![img1](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/66b71048-e7f0-49d5-aa29-e9acd014f361) 
 
-![img3](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0cebe348-4415-4a32-9f71-7b8984ffa058) ![img4](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/1ca4e903-62fe-439b-a572-9d882b1a1f1d)
+![img2](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/54b02909-6f2f-490c-9da9-8755adde954b)
 
-![img5](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/b06fefa0-a148-4930-a0de-ab5025558575) ![img6](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/2e2c88a2-e31d-450a-9518-679cf9abf75a)
+![img3](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0cebe348-4415-4a32-9f71-7b8984ffa058) 
+
+![img4](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/1ca4e903-62fe-439b-a572-9d882b1a1f1d)
+
+![img5](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/b06fefa0-a148-4930-a0de-ab5025558575) 
+
+![img6](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/2e2c88a2-e31d-450a-9518-679cf9abf75a)
 
 ## Desktop version:
 
