@@ -3,16 +3,13 @@ import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {setConversations, setImage, setUsername} from "../features/user";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faEnvelope, faNewspaper, faUsers, faSignOut} from '@fortawesome/free-solid-svg-icons';
 import {socket} from "../App";
-const openMenu = <FontAwesomeIcon icon={faBars}/>;
-const closeMenu = <FontAwesomeIcon icon={faTimes}/>;
 
 const Toolbar = () => {
     const nav = useNavigate();
     const dispatch = useDispatch();
-    const [toggleMenu, setToggleMenu] = useState(openMenu);
-    const [toggleDisplay, setToggleDisplay] = useState('menu-closed')
+
     function logout() {
         socket.emit('logout');
         localStorage.removeItem("autologin");
@@ -22,31 +19,23 @@ const Toolbar = () => {
         dispatch(setConversations([]));
         nav("/login");
     }
-    function toggleMainMenu() {
-        if (toggleMenu === closeMenu) {
-            setToggleDisplay('menu-closed');
-            setToggleMenu(openMenu);
-        } else {
-            setToggleDisplay('menu-opened');
-            setToggleMenu(closeMenu);
-        }
-    }
-    function closeMainMenu() {
-        setToggleDisplay('menu-closed');
-        setToggleMenu(openMenu);
-    }
+
     return (
-        <div className="toolbar g10 f-wrap">
-            <div className="btn-toggle d-flex j-end a-center">
-                <button onClick={toggleMainMenu}>{toggleMenu}</button>
-            </div>
-            <div className={"d-flex g10 f-wrap " + toggleDisplay} onClick={closeMainMenu}>
+        <div>
+            <div className="toolbar nav">
                 <NavLink className="menu-item" to="/">Profile</NavLink>
                 <NavLink className="menu-item" to="/messages">Messages</NavLink>
                 <NavLink className="menu-item" to="/posts">Posts</NavLink>
                 <NavLink className="menu-item" to="/users">Users</NavLink>
+                <button className="menu-item"  onClick={logout}>Log Out</button>
             </div>
-            <button onClick={logout} className={toggleDisplay}>Log Out</button>
+            <div className="toolbar icon-nav">
+                <NavLink className="menu-item" to="/"><FontAwesomeIcon icon={faUser}/></NavLink>
+                <NavLink className="menu-item" to="/messages"><FontAwesomeIcon icon={faEnvelope}/></NavLink>
+                <NavLink className="menu-item" to="/posts"><FontAwesomeIcon icon={faNewspaper}/></NavLink>
+                <NavLink className="menu-item" to="/users"><FontAwesomeIcon icon={faUsers}/></NavLink>
+                <button className="menu-item"  onClick={logout}><FontAwesomeIcon icon={faSignOut}/></button>
+            </div>
         </div>
     );
 };

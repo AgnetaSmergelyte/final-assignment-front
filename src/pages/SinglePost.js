@@ -50,8 +50,8 @@ const SinglePost = () => {
                         <div className="flex-1 d-flex f-col g10">
                             {author && <UserCard user={author}/>}
                             <h1>{post.text}</h1>
-                            <div className="d-flex g10 a-center">
-                                <b><FontAwesomeIcon icon={faThumbsUp}/> {post.likes.length}</b>
+                            <div className="d-flex f-col g10 j-center a-start">
+                                <b>Likes: {post.likes.length} <FontAwesomeIcon icon={faThumbsUp}/></b>
                                 <button className="btn-dark btn-small" onClick={likePost}>
                                     <FontAwesomeIcon icon={faThumbsUp}/>
                                     {post.likes.includes(username) ? " Unlike" : " Like"}

@@ -1,10 +1,11 @@
 import React, {useRef, useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faChevronUp, faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import {faChevronUp, faChevronDown, faComment, faThumbsUp, faClock} from '@fortawesome/free-solid-svg-icons';
 import {socket} from "../App";
 import {useDispatch, useSelector} from "react-redux";
 import PostCard from "../components/PostCard";
 import {setAllPosts} from "../features/user";
+
 const ascIcon = <FontAwesomeIcon icon={faChevronUp}/>;
 const descIcon = <FontAwesomeIcon icon={faChevronDown}/>;
 
@@ -17,6 +18,7 @@ const Posts = () => {
     const [errorMsg, setErrorMsg] = useState('');
     const [sortBy, setSortBy] = useState('');
     const [descending, setDescending] = useState(false);
+
     function submitNewPost() {
         const postInfo = {
             image: postImageRef.current.value,
@@ -29,6 +31,7 @@ const Posts = () => {
         socket.emit("newPost", postInfo);
         setNewPostModal(false);
     }
+
     function sortPosts(sortValue) {
         let desc = true;
         if (sortValue === sortBy) desc = !descending
@@ -68,25 +71,42 @@ const Posts = () => {
             setSortBy('time');
         }
     }
+
     return (
         <div className="p10">
-            <div className="d-flex f-wrap section g10 a-center j-center mb-10">
-                <b>Sort by:</b>
-                <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("comments")}>
-                    Comments
-                    {sortBy === "comments" && (descending ? descIcon : ascIcon)}
-                </button>
-                <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("likes")}>
-                    Likes
-                    {sortBy === "likes" && (descending ? descIcon : ascIcon)}
-                </button>
-                <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("time")}>
-                    Time Created
-                    {sortBy === "time" && (descending ? descIcon : ascIcon)}
-                </button>
-            </div>
-            <div className="d-flex j-end mb-10">
-                <button className="btn-small" onClick={() => setNewPostModal(true)}>+ Create New Post</button>
+            <div className="d-flex space-btw f-wrap section a-center mb-10 g10">
+                <div className="d-flex">
+                    <button className="btn-dark btn-small" onClick={() => setNewPostModal(true)}>+ New Post</button>
+                </div>
+                <div className="d-flex f-wrap g10 a-center j-center nav">
+                    <b>Sort by:</b>
+                    <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("comments")}>
+                        Comments
+                        {sortBy === "comments" && (descending ? descIcon : ascIcon)}
+                    </button>
+                    <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("likes")}>
+                        Likes
+                        {sortBy === "likes" && (descending ? descIcon : ascIcon)}
+                    </button>
+                    <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("time")}>
+                        Time Created
+                        {sortBy === "time" && (descending ? descIcon : ascIcon)}
+                    </button>
+                </div>
+                <div className="d-flex g10 a-center j-center icon-nav">
+                    <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("comments")}>
+                        <p><FontAwesomeIcon icon={faComment}/></p>
+                        {sortBy === "comments" && (descending ? descIcon : ascIcon)}
+                    </button>
+                    <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("likes")}>
+                        <p><FontAwesomeIcon icon={faThumbsUp}/></p>
+                        {sortBy === "likes" && (descending ? descIcon : ascIcon)}
+                    </button>
+                    <button className="btn-dark btn-small d-flex a-center g10" onClick={() => sortPosts("time")}>
+                        <p><FontAwesomeIcon icon={faClock}/></p>
+                        {sortBy === "time" && (descending ? descIcon : ascIcon)}
+                    </button>
+                </div>
             </div>
             {newPostModal &&
                 <div className="modal">
