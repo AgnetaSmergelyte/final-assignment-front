@@ -28,27 +28,29 @@ The platform supports real-time interactions using Socket.io for instant messagi
 
 ##  Mobile version:
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/ce970f5b-848f-4de3-8fd1-0599e9e98cca)
+![img1](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/66b71048-e7f0-49d5-aa29-e9acd014f361)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/1cad3a24-4224-4bfc-a3b4-e354784bf753)
+![img2](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/54b02909-6f2f-490c-9da9-8755adde954b)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/4ecbabe6-4f69-4cd2-acb3-b9e3664d86e3)
+![img3](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0cebe348-4415-4a32-9f71-7b8984ffa058)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/b1405be0-4e3f-4238-9664-8bda979f2319)
+![img4](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/1ca4e903-62fe-439b-a572-9d882b1a1f1d)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/1a871020-1816-4b51-a80f-cdacdd6b6852)
+![img5](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/b06fefa0-a148-4930-a0de-ab5025558575)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/f26ca0b6-e003-465b-bf67-97af68284853)
+![img6](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/2e2c88a2-e31d-450a-9518-679cf9abf75a)
+
 
 ## Desktop version:
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0f2a7529-8882-4a07-820d-eaf6bbb439c4)
+![img7](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0306e622-77c9-4f28-bfda-6fbd72d9dba8)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/2e9794e7-7dcb-440a-95a7-f219d1ef21aa)
+![img8](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/73574151-0a39-47cd-9759-176b7376b3ef)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0e5874a9-efa5-4081-b08f-8975d669b054)
+![img9](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/f1c061d6-70e0-4e45-b712-f3b7b6ff82b1)
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/f35b5aca-547a-48a8-86b0-553949093da8)
+![img10](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/394b03b9-6895-4ca1-97ac-551e5aa98415)
+
 
 
 
