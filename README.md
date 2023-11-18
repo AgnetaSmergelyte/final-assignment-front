@@ -34,7 +34,7 @@ The platform supports real-time interactions using Socket.io for instant messagi
 
 ![img3](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0cebe348-4415-4a32-9f71-7b8984ffa058) 
 
-![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/2d1c3e2e-0828-471d-9815-eccfdba86642)
+![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/d9982619-8117-4c2f-8a0c-189c0ada73f6)
 
 ![img5](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/b06fefa0-a148-4930-a0de-ab5025558575) 
 
