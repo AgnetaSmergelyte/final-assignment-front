@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Project Overview
+
+## Front-End:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Seamless navigation and dynamic page rendering made using React-Router.
 
-In the project directory, you can run:
+Efficient data flow across components and consistent state management implemented by Redux.
 
-### `npm start`
+Responsive Mobile First Web Design enhanced with SCSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Back-End:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Server has been powered by Node.js, a runtime environment known for its non-blocking, event-driven architecture, making it ideal for scalable applications.
 
-### `npm test`
+Express.js, a minimal and flexible Node.js web application framework, was used to build the server's API endpoints and handle middleware.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Data storage and management is handled using MongoDB, a NoSQL database known for its flexibility and scalability.
 
-### `npm run build`
+User passwords are securely hashed using bcrypt, ensuring data protection and security.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Implemented JWT (JSON Web Tokens) for secure and efficient user authorization, allowing for protected routes and actions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The platform supports real-time interactions using Socket.io for instant messaging and live post updates.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Take a look
 
-### `npm run eject`
+##  Mobile version:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![img1](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/66b71048-e7f0-49d5-aa29-e9acd014f361)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![img2](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/54b02909-6f2f-490c-9da9-8755adde954b)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![img3](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0cebe348-4415-4a32-9f71-7b8984ffa058)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/d9982619-8117-4c2f-8a0c-189c0ada73f6)
 
-## Learn More
+![img5](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/b06fefa0-a148-4930-a0de-ab5025558575)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![img6](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/2e2c88a2-e31d-450a-9518-679cf9abf75a)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Desktop version:
 
-### Code Splitting
+![img7](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/0306e622-77c9-4f28-bfda-6fbd72d9dba8)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![img8](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/73574151-0a39-47cd-9759-176b7376b3ef)
 
-### Analyzing the Bundle Size
+![img9](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/f1c061d6-70e0-4e45-b712-f3b7b6ff82b1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![img10](https://github.com/AgnetaSmergelyte/final-assignment-front/assets/131288227/394b03b9-6895-4ca1-97ac-551e5aa98415)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
